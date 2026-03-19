@@ -31,6 +31,12 @@ import threading
 import time
 from pathlib import Path
 
+# Force UTF-8 encoding for standard output/error to prevent UnicodeEncodeError on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Constants
 # ─────────────────────────────────────────────────────────────────────────────
@@ -98,6 +104,7 @@ def _make_env() -> dict:
     """
     env = os.environ.copy()
     env["PYTHONUNBUFFERED"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
     return env
 
 
@@ -202,7 +209,7 @@ def step_server(
         PYTHON, "train_federated.py",
         "--mode",     "server",
         "--rounds",   str(num_rounds),
-        "--clients",  str(num_clients),
+        "--num_clients",  str(num_clients),
         "--strategy", strategy,
         "--mu",       str(mu),
         "--epochs",   str(local_epochs),

@@ -1,0 +1,11 @@
+python train_federated.py --mode server --rounds 10
+
+python train_federated.py --mode client --client_id 0
+
+python train_federated.py --mode client --client_id 1
+
+python train_federated.py --mode client --client_id 2
+
+python api.py
+
+cd frontend   >>   npm run dev
