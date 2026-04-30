@@ -23,9 +23,9 @@ ENV/
 data/federated/
 
 # Generated model artifacts (re-created by training)
-artifacts/
-*.pth
-*.pkl
+# artifacts/
+# *.pth
+# *.pkl
 
 # TensorBoard logs
 experiments/runs/
