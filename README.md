@@ -1,6 +1,6 @@
 # Federated Learning Framework for Type 2 Diabetes Prediction
 
-🚀 **Live Demo API:** [diabetes-prediction-app-omega.vercel.app](diabetes-prediction-app-omega.vercel.app)
+🚀 **Live Demo API:** [https://diabetes-prediction-app-omega.vercel.app/](https://diabetes-prediction-app-omega.vercel.app/)
 
 A **privacy-preserving machine learning system** that trains a diabetes prediction model across multiple simulated hospital clients without sharing raw patient data.
 
